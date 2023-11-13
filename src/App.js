@@ -20,7 +20,7 @@ function App() {
         <Route path="/student-club" element={<StudentClub />} />
 
         <Route
-          path="/academic-staff/details/:id"
+          path="/academic-staff/details"
           element={<AcademicStaffDetails />}
         />
       </Routes>

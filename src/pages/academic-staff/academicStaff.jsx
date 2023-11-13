@@ -18,7 +18,7 @@ const AcademicStaff = () => {
             alt=""
           />
           <div className="text-center">
-            <Link to="/academic-staff/details/">
+            <Link to="/academic-staff/details">
               <h3 className="text-[#1A0E15] text-[20px] font-lato font-[600] leading-[25px] mb-[5px]">
                 Dr. Khatai Aliyev
               </h3>

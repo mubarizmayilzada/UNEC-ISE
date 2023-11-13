@@ -14,21 +14,58 @@ const aboutUs = [
   {
     key: "1",
     label: <Link to="/adminstrative-staff">Adminstrative Staff</Link>,
+    text: "about_us"
   },
   {
     key: "2",
     label: <Link to="/academic-staff">Academic Staff</Link>,
+    text: "about_us"
   },
+];
+const research = [
+  {
+    key: "1",
+    label: <Link to="/publications">Publications</Link>,
+    text: "research"
+  },
+];
+const news = [
+  {
+    key: "1",
+    label: <Link to="/newsletter">Newsletter</Link>,
+    text: "news"
+  },
+  {
+    key: "2",
+    label: <Link to="/events">Events</Link>,
+    text: "news"
+  },
+];
+
+const academicPrograms = [
+  {
+    key: "1",
+    label: <Link to="/academic-programs">Academic programs</Link>,
+    text: "academic_programs"
+  }
+];
+
+const contact = [
+  {
+    key: "1",
+    label: <Link to="/contact">Contact</Link>,
+    text: "contact"
+  }
 ];
 
 const Navbar = () => {
   return (
     <div className="flex items-center gap-[24px] px-[72px]">
       <DropdownItem items={aboutUs} />
-      <DropdownItem items={aboutUs} />
-      <DropdownItem items={aboutUs} />
-      <DropdownItem items={aboutUs} />
-      <DropdownItem items={aboutUs} />
+      <DropdownItem items={research} />
+      <DropdownItem items={news} />
+      <DropdownItem items={academicPrograms} />
+      <DropdownItem items={contact} />
     </div>
   );
 };

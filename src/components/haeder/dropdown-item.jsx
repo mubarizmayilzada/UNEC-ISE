@@ -10,8 +10,13 @@ export default function DropdownItem({ items }) {
          hover:text-[#983468] "
         onClick={(e) => e.preventDefault()}
       >
-        <p>About us</p>
-        <DownOutlined size={"small"} height={"5"} width={"5"} />
+        {items[0].text=="research" && <p>Research</p> }
+        {items[0].text=="about_us" && <p>About us</p> }
+        {items[0].text=="news" && <p>News & Events</p> }
+        {items[0].text=="academic_programs" && <p>Academic Programs</p> }
+        {items[0].text=="contact" && <p>Contact</p> }
+        
+        <DownOutlined size={"small"} height={"4"} width={"4"} />
       </div>
     </Dropdown>
   );
