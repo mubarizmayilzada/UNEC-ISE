@@ -1,0 +1,33 @@
+.ant-collapse-header[aria-expanded="true"] {
+  background-color: #551d3b !important;
+  color: #fff !important;
+}
+.ant-collapse {
+  background-color: transparent !important;
+}
+.ant-collapse-header {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.ant-collapse,
+.ant-collapse-item {
+  border: none !important;
+}
+
+.ant-collapse-header-text {
+  color: #fcfbfc;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+}
+.ant-collapse-header[aria-expanded="false"] .ant-collapse-header-text {
+  color: #551d3b !important;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.ant-collapse-expand-icon {
+  height: 30px;
+}
