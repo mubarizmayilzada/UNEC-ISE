@@ -1,5 +1,6 @@
 import React from "react";
 import Club from "../../assets/img/studentclubimg.png";
+import { Link } from "react-router-dom";
 
 const StudentClub = () => {
   return (
@@ -8,12 +9,12 @@ const StudentClub = () => {
         Academic Staff
       </h2>
       <div className="flex justify-center gap-[32px] flex-wrap">
-        <div className="w-[306px] h-[245px] rounded-[8px] relative">
+        <Link to={'/student-clubs/details'} className="w-[306px] h-[245px] rounded-[8px] relative">
           <img className="rounded-[8px] w-[100%] h-[100%]" src={Club} alt="" />
           <p className=" text-[24px] font-[700] leading-[30px] text-[#FFFDFE] py-[14px] px-[40px] bg-[#767173] absolute left-[0] bottom-0 w-[230px] rounded-tr-[8px] rounded-bl-[8px]">
             Data Science Community
           </p>
-        </div>
+        </Link>
         <div className="w-[306px] h-[245px] rounded-[8px] relative">
           <img className="rounded-[8px] w-[100%] h-[100%]" src={Club} alt="" />
           <p className=" text-[24px] font-[700] leading-[30px] text-[#FFFDFE] py-[14px] px-[40px] bg-[#767173] absolute left-[0] bottom-0 w-[230px] rounded-tr-[8px] rounded-bl-[8px]">

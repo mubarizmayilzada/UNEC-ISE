@@ -15,6 +15,7 @@ export default function DropdownOi({ items }) {
 
         {items[0].text=="year" && <p>Academic Year</p> }
         {items[0].text=="speciality" && <p>Speciality</p> }
+        {items[0].text=="category" && <p>Category</p> }
       </div>
     </Dropdown>
   );

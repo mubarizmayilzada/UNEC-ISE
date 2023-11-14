@@ -22,7 +22,7 @@ const StudentAlumni = () => {
   return (
     <section className='mx-[60px] my-[70px]'>
         <div className='flex justify-between items-center mb-[50px] '>
-        <p className="text-[#551d3b] text-[32px] font-[600] leading-[40px] text-left ">
+        <p className="text-[#551d3b] text-[48px] font-[600] leading-[60px] text-left ">
         Student Alumni
       </p>
 
@@ -40,7 +40,6 @@ const StudentAlumni = () => {
 
 
         </div>
-
         <div className='flex flex-wrap gap-[30px]'>
         <div className='py-[24px] px-[32px] border-[1px] border-[#7F7E7E] rounded-[12px] flex flex-col items-center w-fit gap-[4px]'>
                 <div className='flex gap-[5px] text-[20px] font-[600] leading-[25px] text-[#1A0E15]'>

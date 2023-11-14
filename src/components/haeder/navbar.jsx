@@ -84,8 +84,10 @@ const Navbar = () => {
       <DropdownItem items={student} />
       <DropdownItem items={research} />
       <DropdownItem items={news} />
-      <DropdownItem items={academicPrograms} />
-      <DropdownItem items={contact} />
+      <Link className="text-[14px] flex gap-[16px] text-[#7F7E7E] cursor-pointer items-center px-[24px]
+         hover:text-[#983468] " to="/academic-programs">Academic programs</Link>
+      <Link className="text-[14px] flex gap-[16px] text-[#7F7E7E] cursor-pointer items-center px-[24px]
+         hover:text-[#983468] " to="/contact">Contact</Link>
     </div>
   );
 };

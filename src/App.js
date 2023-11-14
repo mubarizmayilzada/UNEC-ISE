@@ -8,6 +8,11 @@ import AcademicStaffDetails from "./pages/academic-staff/components/academic-sta
 import StudentClub from "./pages/student_club/studentClub";
 import AboutUs from "./pages/about-us/about-us";
 import StudentAlumni from "./pages/student-alumni/studentAlumni";
+import Publication from "./pages/publications/publication";
+import Clubsingle from "./pages/student_club/club-single/clubsingle";
+import Events from "./pages/news/events/events";
+import Newsletter from "./pages/news/newsletter/newsletter";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -22,6 +27,11 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/student-clubs" element={<StudentClub />} />
         <Route path="/student-alumni" element={<StudentAlumni />} />
+        <Route path="/publications" element={<Publication />} />
+        <Route path="/student-clubs/details" element={<Clubsingle />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/newsletter" element={<Newsletter />} />
+        <Route path="/contact" element={<Contact />} />
 
         <Route
           path="/academic-staff/details"
