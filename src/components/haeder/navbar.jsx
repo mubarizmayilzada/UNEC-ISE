@@ -13,13 +13,31 @@ import { Link } from "react-router-dom";
 const aboutUs = [
   {
     key: "1",
-    label: <Link to="/adminstrative-staff">Adminstrative Staff</Link>,
+    label: <Link to="/about-us">About Us</Link>,
     text: "about_us"
   },
   {
     key: "2",
+    label: <Link to="/adminstrative-staff">Adminstrative Staff</Link>,
+    text: "about_us"
+  },
+  {
+    key: "3",
     label: <Link to="/academic-staff">Academic Staff</Link>,
     text: "about_us"
+  },
+
+];
+const student = [
+  {
+    key: "1",
+    label: <Link to="/student-clubs">Student Clubs</Link>,
+    text: "student"
+  },
+  {
+    key: "2",
+    label: <Link to="/student-alumni">Student Alumni</Link>,
+    text: "student"
   },
 ];
 const research = [
@@ -29,6 +47,7 @@ const research = [
     text: "research"
   },
 ];
+
 const news = [
   {
     key: "1",
@@ -62,6 +81,7 @@ const Navbar = () => {
   return (
     <div className="flex items-center gap-[24px] px-[72px]">
       <DropdownItem items={aboutUs} />
+      <DropdownItem items={student} />
       <DropdownItem items={research} />
       <DropdownItem items={news} />
       <DropdownItem items={academicPrograms} />

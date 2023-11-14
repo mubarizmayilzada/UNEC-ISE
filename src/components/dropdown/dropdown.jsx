@@ -1,73 +1,21 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import LogoSrc from "../../assets/img/dropdown.svg";
-import { Link } from "react-router-dom";
-const Wrapper = styled.div`
-  padding: 20px 24px;
-  background-color: #fff;
-  color: #7f7e7e;
-  font-size: 14px;
-  cursor: pointer;
-  position: relative;
-`;
-const DropdownUl = styled.div`
-  position: absolute;
-  top: 100%;
-  left: 0;
-  padding-top: 5px;
-  background-color: #fff;
-  width: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-`;
+import { Dropdown } from "antd";
+import React from "react";
+import Arrow from '../../assets/img/arrow.svg'
+import { DownOutlined } from "@ant-design/icons";
 
-const DropdownLi = styled(Link)`
-  width: 100%;
-  padding: 4px 10px;
-  color: #7f7e7e;
-  line-height: 21px;
-`;
-
-const DropdownLogo = styled.img`
-  margin-top: 3px;
-`;
-
-const InnerWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  line-height: 17px;
-`;
-const Dropdown = (props) => {
-  const [open, setOpen] = useState(false);
-  const handleClick = () => {
-    setOpen(!open);
-  };
-
+export default function DropdownOi({ items }) {
   return (
-    <Wrapper>
-      <InnerWrapper onClick={() => handleClick()}>
-        {props.content} <DropdownLogo src={LogoSrc} />
-      </InnerWrapper>
-      {open && (
-        <DropdownUl>
-          {props.data.map((item) => (
-            <Link key={item.id} to={item.url}>
-              {item.name}
-            </Link>
-          ))}
-          <Link to={props.url}>{props.name}</Link>
-        </DropdownUl>
-      )}
-    </Wrapper>
-  );
-};
+    <Dropdown menu={{ items }}>
+      <div
+        className="text-[16px] flex gap-[16px] font-[600] text-[#1A0E15] cursor-pointer items-center px-[24px]
+         hover:text-[#983468] "
+        onClick={(e) => e.preventDefault()}
+      >
+        <img src={Arrow} alt="" className="mt-[3px]" />
 
-export default Dropdown;
+        {items[0].text=="year" && <p>Academic Year</p> }
+        {items[0].text=="speciality" && <p>Speciality</p> }
+      </div>
+    </Dropdown>
+  );
+}

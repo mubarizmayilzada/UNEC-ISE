@@ -1,6 +1,6 @@
 import { Dropdown } from "antd";
+import Arrow from '../../assets/img/arrownav.svg'
 import React from "react";
-import { DownOutlined, SmileOutlined } from "@ant-design/icons";
 
 export default function DropdownItem({ items }) {
   return (
@@ -11,12 +11,13 @@ export default function DropdownItem({ items }) {
         onClick={(e) => e.preventDefault()}
       >
         {items[0].text=="research" && <p>Research</p> }
+        {items[0].text=="student" && <p>Students</p> }
         {items[0].text=="about_us" && <p>About us</p> }
         {items[0].text=="news" && <p>News & Events</p> }
         {items[0].text=="academic_programs" && <p>Academic Programs</p> }
         {items[0].text=="contact" && <p>Contact</p> }
         
-        <DownOutlined size={"small"} height={"4"} width={"4"} />
+        <img src={Arrow} alt="" className="mt-[3px] fill-[#7F7E7E]" />
       </div>
     </Dropdown>
   );
