@@ -1,5 +1,6 @@
 import React from "react";
 import FooterLogo from "../../assets/img/footerLogo.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -16,40 +17,40 @@ const Footer = () => {
         <h3 className="text-[20px] font-lato font-[600] leading-[25px] text-[#fff] mb-[3px]">
           About Us
         </h3>
-        <li>Who we are</li>
-        <li>History</li>
-        <li>Administrative Structure</li>
-        <li>Faculty Lecturers</li>
-        <li>Accreditation</li>
+        <Link to={"/about-us"}>Who we are</Link>
+        <Link to={"/about-us"}>History</Link>
+        <Link to={"/adminstrative-staff"}>Administrative Structure</Link>
+        <Link to={""}>Faculty Lecturers</Link>
+        <Link to={""}>Accreditation</Link>
       </ul>
       <ul className="text-[14px] font-lato font-[500] leading-[17px] text-[#fff] flex flex-col gap-[15px]">
         <h3 className="text-[20px] font-lato font-[600] leading-[25px] text-[#fff] mb-[3px]">
           Research
         </h3>
-        <li>Publications</li>
+        <Link to={"/publications"}>Publications</Link>
       </ul>
       <ul className="text-[14px] font-lato font-[500] leading-[17px] text-[#fff] flex flex-col gap-[15px]">
         <h3 className="text-[20px] font-lato font-[600] leading-[25px] text-[#fff] mb-[3px]">
           Academic Programs
         </h3>
-        <li>Undergraduate Programs</li>
+        <Link to={""}>Undergraduate Programs</Link>
       </ul>
       <ul className="text-[14px] font-lato font-[500] leading-[17px] text-[#fff] flex flex-col gap-[15px]">
         <h3 className="text-[20px] font-lato font-[600] leading-[25px] text-[#fff] mb-[3px]">
           Students
         </h3>
-        <li>Students Club</li>
-        <li>Success Stories</li>
-        <li>
+        <Link to={"/student-club"}>Students Club</Link>
+        <Link to={"/student-alumni"}>Success Stories</Link>
+        <Link to={"/student-alumni"}>
           Networking <br /> Opportunities
-        </li>
+        </Link>
       </ul>
       <ul className="text-[14px] font-lato font-[500] leading-[17px] text-[#fff] flex flex-col gap-[15px]">
         <h3 className="text-[20px] font-lato font-[600] leading-[25px] text-[#fff] mb-[3px]">
           News and Events
         </h3>
-        <li>News</li>
-        <li>Events</li>
+        <Link to={"/newsletter"}>News</Link>
+        <Link to={"/events"}>Events</Link>
       </ul>
       <ul className="text-[14px] font-lato font-[500] leading-[17px] text-[#fff] flex flex-col gap-[15px]">
         <h3 className="text-[20px] font-lato font-[600] leading-[25px] text-[#fff] mb-[3px]">

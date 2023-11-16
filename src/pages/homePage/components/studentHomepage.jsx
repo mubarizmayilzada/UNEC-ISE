@@ -1,5 +1,6 @@
 import React from "react";
 import RedirectIconSrc from "../../../assets/img/welcomeredirect.svg";
+import { Link } from "react-router-dom";
 
 const StudentHomepage = () => {
   return (
@@ -25,10 +26,13 @@ const StudentHomepage = () => {
             difference in people's lives.
           </p>
           <div className="flex justify-start">
-            <div className="flex w-[99px] whitespace-nowrap items-center justify-between gap-[12px] text-[#551d3b] text-[16px] font-lato font-[500] leading-[24px] justify-self-end">
+            <Link
+              to={"/student-club"}
+              className="flex w-[99px] whitespace-nowrap items-center justify-between gap-[12px] text-[#551d3b] text-[16px] font-lato font-[500] leading-[24px] justify-self-end"
+            >
               Get More
               <img alt="" className="w-[19px]" src={RedirectIconSrc} />
-            </div>
+            </Link>
           </div>
         </div>
         <div className="w-[50%] bg-blue">
@@ -67,10 +71,13 @@ const StudentHomepage = () => {
             difference in people's lives.
           </p>
           <div className="flex justify-start">
-            <div className="flex w-[99px] whitespace-nowrap items-center justify-between gap-[12px] text-[#551d3b] text-[16px] font-lato font-[500] leading-[24px] justify-self-end">
+            <Link
+              to={"/publications"}
+              className="flex w-[99px] whitespace-nowrap items-center justify-between gap-[12px] text-[#551d3b] text-[16px] font-lato font-[500] leading-[24px] justify-self-end"
+            >
               Get More
               <img alt="" className="w-[19px]" src={RedirectIconSrc} />
-            </div>
+            </Link>
           </div>
         </div>
       </div>

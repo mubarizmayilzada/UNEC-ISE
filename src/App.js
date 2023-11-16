@@ -28,13 +28,13 @@ function App() {
         <Route path="/student-clubs" element={<StudentClub />} />
         <Route path="/student-alumni" element={<StudentAlumni />} />
         <Route path="/publications" element={<Publication />} />
-        <Route path="/student-clubs/details" element={<Clubsingle />} />
         <Route path="/events" element={<Events />} />
         <Route path="/newsletter" element={<Newsletter />} />
         <Route path="/contact" element={<Contact />} />
 
+        <Route path="/student-clubs/details/:id" element={<Clubsingle />} />
         <Route
-          path="/academic-staff/details"
+          path="/academic-staff/details/:id"
           element={<AcademicStaffDetails />}
         />
       </Routes>
