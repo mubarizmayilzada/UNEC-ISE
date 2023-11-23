@@ -86,7 +86,7 @@ const Newsletter = () => {
                 )}
               </div>
               {newsSection1.length > 0 && (
-                <Link to={`/student-clubs/details/${newsSection1[0].id}`}>
+                <Link to={`/newsletter/details/${newsSection1[0].id}`}>
                   <p className="text-[48px] font-[600] leading-[60px] text-[#FFFDFE] w-[730px]">
                     {newsSection1[0].title} {/* Title from the first article */}
                   </p>
@@ -120,7 +120,7 @@ const Newsletter = () => {
                         {/* Creation date from the current article */}
                       </span>
                     </div>
-                    <Link to={`/student-clubs/details/${article.id}`}>
+                    <Link to={`/newsletter/details/${article.id}`}>
                       <p className="text-[24px] font-[600] leading-[30px] text-[#1A0E15]">
                         {article.title} {/* Title from the current article */}
                       </p>
@@ -330,7 +330,7 @@ const Newsletter = () => {
                   {article.creationDate}
                 </span>
               </div>
-              <Link to={`/student-clubs/details/${article.id}`}>
+              <Link to={`/newsletter/details/${article.id}`}>
                 <p className="text-[24px] font-[600] leading-[30px] text-[#1A0E15]">
                   {article.title}
                 </p>
