@@ -1,7 +1,6 @@
 import { Collapse } from "antd";
 import "./index.css";
 import Linkedin from "../../../assets/img/linkedinlogo.svg";
-import Staff from "../../../assets/img/staff.png";
 import Cv from "../../../assets/img/cv.svg";
 import academicIcon from "../../../assets/img/academiconsGoogleScholar1.svg";
 import React, { useState, useEffect } from "react";
@@ -12,25 +11,25 @@ export default function AcademicStaffDetails() {
   const { id } = useParams();
   const [staffDetails, setStaffDetails] = useState(null);
 
-  const items = [
-    {
-      key: "1",
-      label: "Biography",
-      children: (
-        <p className="text-[#000] text-[16px] font-[400] leading-[24px]"></p>
-      ),
-    },
-    {
-      key: "2",
-      label: "This is panel header 2",
-      children: <p>{"text"}</p>,
-    },
-    {
-      key: "3",
-      label: "This is panel header 3",
-      children: <p>{"text"}</p>,
-    },
-  ];
+  // const items = [
+  //   {
+  //     key: "1",
+  //     label: "Biography",
+  //     children: (
+  //       <p className="text-[#000] text-[16px] font-[400] leading-[24px]"></p>
+  //     ),
+  //   },
+  //   {
+  //     key: "2",
+  //     label: "This is panel header 2",
+  //     children: <p>{"text"}</p>,
+  //   },
+  //   {
+  //     key: "3",
+  //     label: "This is panel header 3",
+  //     children: <p>{"text"}</p>,
+  //   },
+  // ];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,6 +53,18 @@ export default function AcademicStaffDetails() {
   const onChange = (key) => {
     console.log(key);
   };
+
+  const items = staffDetails.academicDetailCategoryDtos.map((detail) => ({
+    key: detail.id,
+    label: detail.academicStaffCategoryName,
+    children: (
+      <p className="text-[#000] text-[16px] font-[400] leading-[24px]">
+        {detail.value}
+      </p>
+    ),
+  }));
+
+  console.log(staffDetails.file);
 
   return (
     <div className="flex mx-[60px] gap-[54px]">

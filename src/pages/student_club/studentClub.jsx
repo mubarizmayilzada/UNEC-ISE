@@ -21,6 +21,8 @@ const StudentClub = () => {
     fetchData();
   }, []);
 
+  console.log();
+
   return (
     //     <section className="mx-[60px] mb-[150px]">
     //       <h2 className="text-[48px] text-center font-lato font-[600] leading-[60px] mb-[56px] text-[#551D3B]">
@@ -71,7 +73,7 @@ const StudentClub = () => {
           >
             <img
               className="rounded-[8px] w-[100%] h-[100%]"
-              src={Club}
+              src={club.file}
               alt={club.title}
             />
             <p className="text-[24px] font-[700] leading-[30px] text-[#FFFDFE] py-[14px] px-[40px] bg-[#767173] absolute left-[0] bottom-0 w-[230px] rounded-tr-[8px] rounded-bl-[8px]">

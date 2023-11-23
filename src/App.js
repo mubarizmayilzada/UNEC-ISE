@@ -13,6 +13,7 @@ import Clubsingle from "./pages/student_club/club-single/clubsingle";
 import Events from "./pages/news/events/events";
 import Newsletter from "./pages/news/newsletter/newsletter";
 import Contact from "./pages/Contact";
+import NewsletterDetails from "./pages/news/newsletter/newsletterDetails";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/newsletter" element={<Newsletter />} />
         <Route path="/contact" element={<Contact />} />
 
+        <Route path="/newsletter/details/:id" element={<NewsletterDetails />} />
         <Route path="/student-clubs/details/:id" element={<Clubsingle />} />
         <Route
           path="/academic-staff/details/:id"
