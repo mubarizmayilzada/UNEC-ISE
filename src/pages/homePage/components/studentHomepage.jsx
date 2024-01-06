@@ -1,6 +1,8 @@
 import React from "react";
 import RedirectIconSrc from "../../../assets/img/welcomeredirect.svg";
 import { Link } from "react-router-dom";
+import Left from "../../../assets/img/sakams.PNG";
+import Right from "../../../assets/img/sakamss.PNG";
 
 const StudentHomepage = () => {
   return (
@@ -36,20 +38,12 @@ const StudentHomepage = () => {
           </div>
         </div>
         <div className="w-[50%] bg-blue">
-          {/* <img
-            src={Accounting}
-            alt=""
-            className="w-[100%] h-[100%] bg-[red]"
-          /> */}
+          <img src={Right} alt="" className="w-[100%] h-[100%] bg-[red]" />
         </div>
       </div>
       <div className="flex justify-between">
-        <div className="w-[50%] bg-[red]">
-          {/* <img
-            src={Accounting}
-            alt=""
-            className="w-[100%] h-[100%] bg-[red]"
-          /> */}
+        <div className="w-[50%] ">
+          <img src={Left} alt="" className="w-[100%] h-[100%] " />
         </div>
         <div className="w-[50%] py-[24px] px-[32px]">
           <p className="text-[#551d3b] text-[32px] font-[600] leading-[40px] text-left mb-[24px]">

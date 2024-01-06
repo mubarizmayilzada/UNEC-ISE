@@ -63,7 +63,7 @@ const Newsletter = () => {
           <div className="h-[654px] w-[982px] rounded-[8px] relative mb-[70px]">
             {newsSection1.length > 0 && (
               <img
-                className="w-[100%] h-[100%] rounded-[8px]"
+                className="w-[100%] h-[100%] rounded-[8px] object-cover"
                 src={newsSection1[0].file} // Assuming the first article's file corresponds to the image
                 alt=""
               />
@@ -101,7 +101,7 @@ const Newsletter = () => {
                 className="py-[32px] w-[475px] border-b-[1px] border-[#7F7E7E] border-dashed flex gap-[24px]"
               >
                 <img
-                  className="w-[124px] h-[124px] rounded-[8px]"
+                  className="w-[124px] h-[124px] rounded-[8px] object-cover"
                   src={article.file} // Assuming each article's file corresponds to the image
                   alt=""
                 />
@@ -317,7 +317,7 @@ const Newsletter = () => {
           {newsSection2.map((article) => (
             <div key={article.id} className="w-[282px] ">
               <img
-                className="w-[100%] h-[126px] rounded-[8px] mb-[28px]"
+                className="w-[100%] h-[126px] rounded-[8px] mb-[28px] object-cover"
                 src={article.file}
                 alt=""
               />

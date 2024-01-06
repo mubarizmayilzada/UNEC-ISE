@@ -21,7 +21,7 @@ const StudentClub = () => {
     fetchData();
   }, []);
 
-  console.log();
+  console.log(clubs);
 
   return (
     //     <section className="mx-[60px] mb-[150px]">
@@ -62,7 +62,7 @@ const StudentClub = () => {
     // };
     <section className="mx-[60px] mb-[150px]">
       <h2 className="text-[48px] text-center font-lato font-[600] leading-[60px] mb-[56px] text-[#551D3B]">
-        Academic Staff
+        Student Clubs
       </h2>
       <div className="flex justify-center gap-[32px] flex-wrap">
         {clubs.map((club) => (
@@ -76,6 +76,7 @@ const StudentClub = () => {
               src={club.file}
               alt={club.title}
             />
+            {console.log(club.file)}
             <p className="text-[24px] font-[700] leading-[30px] text-[#FFFDFE] py-[14px] px-[40px] bg-[#767173] absolute left-[0] bottom-0 w-[230px] rounded-tr-[8px] rounded-bl-[8px]">
               {club.title}
             </p>

@@ -4,34 +4,72 @@ import Cv from "../../assets/img/cv.svg";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import SelectOi from "../../components/dropdown/select";
+import "./index.css";
 
-const category = [
-  {
-    key: "2",
-    label: <p>2020</p>,
-    text: "speciality",
-  },
-];
 
 const Publication = () => {
   const [researchData, setResearchData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [title, setTitle] = useState("");
+  const [year, setYear] = useState("");
+  const [specialty, setSpecialty] = useState("");
+  const [fetched, setFetched] = useState(false);
+  const [yearOptions, setYearOptions] = useState([]);
+  const [specialtyOptions, setSpecialtyOptions] = useState([]);
 
   useEffect(() => {
     const fetchResearchData = async () => {
       try {
-        const response = await axios.get("http://test-api.com/api/v1/research");
+        const url = "http://test-api.com/api/v1/research";
+
+        const response = await axios.get(url, {
+          params: {
+            name: title ? title : undefined,
+            Year: year ? new Date(year) : undefined,
+            CategoryId: specialty ? specialty : undefined,
+          },
+        });
         const researchItems = response.data.researhs.items;
         setResearchData(researchItems);
+
+        if (!fetched) {
+          const yearOptions = researchItems
+            .map((research) => ({
+              value: research.researchDateYearCategoryName,
+              label: research.researchDateYearCategoryName,
+            }))
+            .filter(
+              (year, index, self) =>
+                self.findIndex((y) => y.value === year.value) === index
+            )
+            .sort((a, b) => b.value - a.value);
+
+          const specialtyOptions = researchItems
+            .map((research) => ({
+              label: research.researchCategoryName,
+              value: research.researchCategoryId,
+            }))
+            .filter(
+              (year, index, self) =>
+                self.findIndex((y) => y.value === year.value) === index
+            );
+
+          setYearOptions(yearOptions);
+          setSpecialtyOptions(specialtyOptions);
+        }
       } catch (error) {
         console.error("Error fetching research data:", error);
       } finally {
         setLoading(false);
+        setFetched(true);
       }
     };
 
     fetchResearchData();
-  }, []);
+  }, [title, year, specialty]);
+
+  console.log({ specialtyOptions });
 
   const groupedResearchData = researchData.reduce((acc, research) => {
     const { researchDateYearCategoryName } = research;
@@ -47,9 +85,8 @@ const Publication = () => {
   );
 
   let mainYear = sortedYearCategories.map((year, index) => ({
-    key: `${index + 1}`,
-    label: <p>{year}</p>,
-    text: "year",
+    value: year,
+    label: year,
   }));
 
   if (loading) {
@@ -77,11 +114,25 @@ const Publication = () => {
               className="w-[100%]  outline-none placeholder:text-[#7F7E7E] pl-[8px] text-[#7F7E7E] text-[14px] font-[600]"
               placeholder="Search for title"
               type="text"
-              name=""
+              value={title}
+              onChange={(e) => {
+                setTitle(e.target.value);
+              }}
             />
           </div>
-          <DropdownOi items={mainYear} />
-          <DropdownOi items={category} />
+          {/* <DropdownOi items={category} /> */}
+          <SelectOi
+            options={specialtyOptions}
+            setValue={setSpecialty}
+            placeholder={"Specialty"}
+            label={"Specialty"}
+          />
+          <SelectOi
+            options={yearOptions}
+            setValue={setYear}
+            label={"Year"}
+            placeholder={"Year"}
+          />
         </div>
       </div>
       <div className="flex flex-col gap-[48px]">

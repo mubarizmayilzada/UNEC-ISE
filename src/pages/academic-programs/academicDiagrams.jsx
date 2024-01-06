@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from "react";
-import RedirectIconSrc from "../../../assets/img/welcomeredirect.svg";
-import FinanceImg from "../../../assets/img/finance.svg";
-import Accounting from "../../../assets/img/accounting.svg";
-import Business from "../../../assets/img/business.svg";
-import Economics from "../../../assets/img/economics.svg";
-import Logistics from "../../../assets/img/logistic.svg";
+import React, { useState, useEffect } from "react";
+import RedirectIconSrc from "../../assets/img/welcomeredirect.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const UndergraduatePrograms = () => {
+const AcademicDiagrams = () => {
   const [academicPrograms, setAcademicPrograms] = useState([]);
 
   useEffect(() => {
@@ -27,18 +22,14 @@ const UndergraduatePrograms = () => {
 
   return (
     <section className="mt-[65px] ml-[60px] mb-[120px] mr-[60px]">
-      <p className="text-[#551d3b] text-[32px] font-[600] leading-[40px] text-left mb-[23px]">
-        Undergraduate Programs
-      </p>
-      <div className="flex justify-between gap-[32px]">
+      <h2 className="text-[48px] text-center font-lato font-[600] leading-[60px] mb-[56px] text-[#551D3B]">
+        Academic Programs
+      </h2>
+      <div className="flex flex-col gap-[32px]">
         {academicPrograms.map((program) => (
-          <div className="flex flex-col w-[238px] h-[453px]" key={program.id}>
-            <img
-              className="object-cover w-[238px] h-[150px]"
-              alt={program.name}
-              src={program.file}
-            />
-            <div className="my-[24px] mx-[16px] flex flex-col justify-between h-[100%]">
+          <div key={program.id} className="flex w-[100%] h-[150px]">
+            <img alt={program.name} src={program.file} />
+            <div className="my-[24px] mx-[48px] flex flex-col gap-[12px] justify-between h-[100%]">
               <div className="flex gap-[12px] items-start flex-col ">
                 <p className="text-[#551d3b] text-[24px] font-[600] leading-[30px] font-lato ">
                   {program.name}
@@ -48,8 +39,6 @@ const UndergraduatePrograms = () => {
                     dangerouslySetInnerHTML={{ __html: program.description }}
                   ></div>
                 </p>
-              </div>
-              <div className="flex justify-start">
                 <Link
                   to={`/academic-programs/details/${program.id}`} // Add your link destination
                   className="flex w-[99px] whitespace-nowrap items-center justify-between gap-[12px] text-[#551d3b] text-[16px] font-lato font-[500] leading-[24px] justify-self-end"
@@ -66,4 +55,4 @@ const UndergraduatePrograms = () => {
   );
 };
 
-export default UndergraduatePrograms;
+export default AcademicDiagrams;

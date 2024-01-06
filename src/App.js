@@ -14,10 +14,13 @@ import Events from "./pages/news/events/events";
 import Newsletter from "./pages/news/newsletter/newsletter";
 import Contact from "./pages/Contact";
 import NewsletterDetails from "./pages/news/newsletter/newsletterDetails";
+import AcademicDiagrams from "./pages/academic-programs/academicDiagrams";
+import AcademicProgramDetails from "./pages/academic-programs/academicProgramDetails";
+import CourseDetails from "./pages/academic-programs/academic-course/courseDetails";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App max-h-[100vh]">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -32,6 +35,14 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/newsletter" element={<Newsletter />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/academic-programs" element={<AcademicDiagrams />} />
+
+        <Route
+          path="/academic-programs/details/:id"
+          element={<AcademicProgramDetails />}
+        />
+
+        <Route path="/course/details/:id" element={<CourseDetails />} />
 
         <Route path="/newsletter/details/:id" element={<NewsletterDetails />} />
         <Route path="/student-clubs/details/:id" element={<Clubsingle />} />

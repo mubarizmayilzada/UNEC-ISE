@@ -57,6 +57,8 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import HomeSlider from "../homePage/components/homeSlider";
+import AboutSlider from "./components/aboutSlider";
 
 const AboutUs = () => {
   const [aboutData, setAboutData] = useState(null);
@@ -83,9 +85,13 @@ const AboutUs = () => {
               {"Who we are"}
             </h2>
             <p className="text-[16px] font-lato font-[400] leading-[24px] text-[#1A0E15]">
-              {aboutData.description}
+              {/* html coming from api, show it below */}
+              <div dangerouslySetInnerHTML={{ __html: aboutData.title }}></div>
             </p>
           </section>
+
+          <AboutSlider />
+
           <section className="w-[710px] mx-[auto] flex gap-[129px] mb-[100px] mt-[70px]">
             <div>
               <h3 className="text-[32px] font-lato font-[600] leading-[40px] mb-[24px] text-[#551D3B]">

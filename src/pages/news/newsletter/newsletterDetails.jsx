@@ -77,7 +77,7 @@ const NewsletterDetails = () => {
     <section>
       <div className="h-[400px] w-[100%] relative mb-[70px]">
         <img
-          className="w-[100%] h-[100%]"
+          className="w-[100%] h-[100%] object-cover"
           src={newsFromFirstEndpoint.file}
           alt=""
         />
@@ -98,8 +98,12 @@ const NewsletterDetails = () => {
         </div>
       </div>
       <div className="my-[48px] mx-[60px] flex gap-[88px]">
-        <div className="w-[928px] h-[1000px] bg-[red]">
-          {newsFromFirstEndpoint.description}
+        <div className="w-[928px] h-[1000px]">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: newsFromFirstEndpoint.description,
+            }}
+          ></div>
         </div>
         {/* <div>
           <h2 className="text-[#020618] text-[25px] font-[600] leading-[33px] flex flex-col gap-[20px]">
